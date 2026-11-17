@@ -1,53 +1,78 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "linden",
-  "name": "MuzanCI",
+  "theme": "aspen",
+  "name": "Montclair CI",
   "colors": {
-    "primary": "#ef4444",
-    "dark": "#b91c1c",
-    "light": "#fca5a5"
+    "primary": "#370a00",
+    "dark": "#8c3f27",
+    "light": "#feecd3"
+  },
+  "fonts": {
+    "family": "Inter"
   },
   "favicon": {
-    "light": "/images/logo.png",
-    "dark": "/images/logo.png"
+    "light": "/images/logo_light.svg",
+    "dark": "/images/logo_dark.svg"
   },
   "banner": {
-    "content": "Muzan CI is free for public repositories. [Learn more about limits](/limits)"
+    "content": "Montclair CI is free for public repositories. [Learn more about allowances](/how-it-works/allowances)"
+  },
+  "background": {
+    "decoration": "grid",
+    "color": {
+      "light": "#fff",
+      "dark": "#000"
+    }
   },
   "navigation": {
     "tabs": [
       {
-        "tab": "Docs",
+        "tab": "Documentation",
         "pages": [
           "index",
-          "install-on-github",
           {
-            "group": "How it works",
+            "group": "TUTORIALS",
+            "icon": "book-open",
+            "pages": [
+              "tutorials/github",
+              "tutorials/gitlab",
+              "tutorials/gitea",
+              "tutorials/forgejo"
+            ]
+          },
+          {
+            "group": "HOW IT WORKS",
+            "icon": "shapes",
             "pages": [
               "how-it-works/overview",
               "how-it-works/pipelines",
               "how-it-works/images",
               "how-it-works/rules",
               "how-it-works/jobs",
-              "how-it-works/envvars-and-secrets",
-              "how-it-works/artifacts",
-              "how-it-works/cache",
-              "how-it-works/ssh-access",
+              "how-it-works/ssh-tunnel",
+              "how-it-works/allowances",
               "how-it-works/managed-runners",
               "how-it-works/self-hosted-runners"
             ]
           },
           {
-            "group": "Examples",
+            "group": "EXAMPLES",
+            "icon": "box",
             "pages": [
               "examples/hello-world",
               "examples/rules",
               "examples/jobs",
-              "examples/envvars-and-secrets",
-              "examples/artifacts",
-              "examples/cache",
               "examples/managed-runners",
               "examples/self-hosted-runners"
+            ]
+          },
+          {
+            "group": "API Reference",
+            "icon": "code",
+            "pages": [
+              "api-reference/pipeline-configuration-language",
+              "api-reference/cli",
+              "api-reference/http-json"
             ]
           }
         ]
@@ -57,23 +82,35 @@
         "pages": [
           "blog"
         ]
+      },
+      {
+        "tab": "Pricing",
+        "pages": [
+          "pricing"
+        ]
       }
     ]
   },
   "logo": {
-    "light": "/images/logo.png",
-    "dark": "/images/logo.png"
+    "light": "/images/logo_light.svg",
+    "dark": "/images/logo_dark.svg"
   },
   "navbar": {
     "primary": {
       "type": "button",
-      "label": "Get Help",
-      "href": "https://github.com/MuzanCI/feedback/issues/new"
-    }
+      "label": "Dashboard",
+      "href": "https://ci.montclairci.com"
+    },
+    "links": [
+      {
+        "label": "Support",
+        "href": "/support"
+      }
+    ]
   },
   "footer": {
     "socials": {
-      "github": "https://github.com/MuzanCI/feedback/issues/new",
+      "github": "https://github.com/MontclairCI/feedback/issues/new",
       "discord": "https://discord.gg/6VY5xRXV2"
     },
     "links": [
@@ -102,7 +139,7 @@
   "errors": {
     "404": {
       "redirect": false,
-      "description": "The URL that you were looking for does not exist. Please check your URL or [go back to home](https://muzanci.com/)"
+      "description": "The URL that you were looking for does not exist. Please check your URL or [go back to home](https://montclairci.com/)"
     }
   },
   "icons": {

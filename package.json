@@ -1,14 +1,14 @@
 {
-  "name": "muzanci-docs",
+  "name": "montclair_docs",
   "version": "1.0.0",
   "description": "Use the starter kit to get your docs deployed and ready to customize.",
-  "homepage": "https://github.com/MuzanCI/docs#readme",
+  "homepage": "https://github.com/MontclairCI/docs#readme",
   "bugs": {
-    "url": "https://github.com/MuzanCI/docs/issues"
+    "url": "https://github.com/MontclairCI/docs/issues"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MuzanCI/docs.git"
+    "url": "git+https://github.com/MontclairCI/docs.git"
   },
   "license": "BSD-3-Clause",
   "author": "",

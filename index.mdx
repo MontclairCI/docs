@@ -5,40 +5,37 @@ mode: "wide"
 hideFooterPagination: true
 ---
 
-**Muzan CI** is a <Tooltip headline="What is continuous integration?" tip="Continuous integration (CI) is the practice of automating builds and tests on every commit." cta="Learn more" href="/how-it-works/overview">continuous integration</Tooltip> platform designed for FreeBSD and Linux packages.
+**Montclair CI** is a <Tooltip headline="What is continuous integration?" tip="Continuous integration (CI) is the practice of automating builds and tests on every commit." cta="Learn more" href="/how-it-works/overview">continuous integration</Tooltip> service for FreeBSD and Linux software.
 
 <Steps>
   <Step title="1. Push changes" icon="git-pull-request-arrow">
-    Trigger jobs whenever new commits are pushed to your repository.
+    Trigger <Tooltip headline="What is a pipeline?" tip="TODO" cta="Learn more" href="/how-it-works/pipelines">pipelines</Tooltip> whenever new commits are pushed to your repository.
   </Step>
   <Step title="2. Build and test" icon="check">
-    Run on a wide range of FreeBSD and Linux images.
+    Run on a wide range of FreeBSD and Linux <Tooltip headline="What is a Docker image?" tip="A Docker image (or container image) is a standard format for packaging FreeBSD and Linux userspace software." cta="Learn more" href="/how-it-works/images">Docker images</Tooltip>.
   </Step>
-  <Step title="3. Debug problems with SSH" icon="terminal">
-    Connect to your jobs with SSH to troubleshoot failures.
-  </Step>
-  <Step title="4. Distribute packages (Coming soon)" icon="box">
-     Publish packages to your users with `pkg`, `apt`, `yum`, and `pacman`.
+  <Step title="3. Debug with SSH" icon="terminal">
+    Connect to your CI execution environment with <Tooltip headline="How does SSH work?" tip="TODO" cta="Learn more" href="/how-it-works/ssh-access">SSH</Tooltip> to troubleshoot failures.
   </Step>
 </Steps>
 
 <Columns cols={2}>
-  <Card icon="github" title="Install on GitHub" href="https://github.com/marketplace/muzanci" arrow={false} horizontal>Free for public repos</Card>
+  <Card icon="github" title="5-minute GitHub Tutorial" href="https://github.com/marketplace/montclair-ci" arrow={false} horizontal />
 </Columns>
 
+Not using GitHub? We also have 5-minute tutorials for <a href="/tutorials/gitlab">GitLab</a>, <a href="/tutorials/gitea">Gitea</a>, and <a href="/tutorials/forgejo">Forgejo</a>.
+
 <h1 noAnchor>
-  Diverse runner platforms
+  Run CI for FreeBSD and Linux
 </h1>
 
-Muzan CI supports custom <Tooltip headline="What is a container image?" tip="A container image (or Docker image) is a standard format for packaging FreeBSD and Linux userspace software." cta="Learn more" href="/how-it-works/images">container images</Tooltip> for FreeBSD and Linux.
+Montclair CI supports custom <Tooltip headline="What is a Docker image?" tip="A Docker image (or container image) is a standard format for packaging FreeBSD and Linux userspace software." cta="Learn more" href="/how-it-works/images">Docker images</Tooltip> for FreeBSD and Linux.
 
 <Columns cols={2}>
   <div>
     **Architectures**
     - `amd64`
     - `arm64`
-    - `i686`
-    - `armv7`
   </div>
   <div>
     **Operating system kernels**
@@ -47,19 +44,17 @@ Muzan CI supports custom <Tooltip headline="What is a container image?" tip="A c
   </div>
 </Columns>
 
-<Columns cols={2}>
-  <Card icon="book-open" title="Learn more about runner images" href="/how-it-works/images"  horizontal />
-</Columns>
+Windows and macOS runners are not supported.
 
 <h1 noAnchor>
-  Expressive and maintainable
+  Readability counts
 </h1>
 
-Muzan CI uses a [configuration language](/how-it-works/pipelines) that is
+Montclair CI uses a <Tooltip headline="What configuration language is used?" tip="TODO" cta="Learn more" href="/">Python-like language</Tooltip> for defining CI pipelines. The pipeline language is
 
-- **Familiar**, with Python-like syntax
 - **Expressive**, with native support for loops and conditionals
-- **Maintainable**, with reusable functions, variables, and imports
+- **Maintainable**, with reusable functions, variables, and module imports
+- **Guaranteed to terminate**, with static checking for unbounded loops and recursion
 
 <Tabs>
   <Tab title="Matrix strategy">
@@ -119,48 +114,69 @@ def clang_job(name: str, srcs: list[str]):
 </Tabs>
 
 <h1 noAnchor>
-  Easily debuggable
+  Stable prod begins with ergonomic dev
 </h1>
 
+The Montclair CLI (`montclair`) provides a toolbox for visualizing, validating, and debugging your CI pipelines.
+
 <Tabs>
-  <Tab title="Static analysis">
+  <Tab title="Pipeline visualization">
     <CodeGroup>
 ```sh Interactive shell
-$ muzanci check
-> No cycles or errors found.
-
-$ muzanci visualize
+$ montclair visualize
 > [Graph visualization of the pipeline]
 ```
     </CodeGroup>
   </Tab>
+
+  <Tab title="Static checking">
+    <CodeGroup>
+```sh Interactive shell
+$ montclair check
+> [Show cycles or misconfiguration]
+```
+    </CodeGroup>
+  </Tab>
+  
   <Tab title="SSH tunnel">
     <CodeGroup>
 ```sh Interactive shell
-$ muzanci ssh --job-id=1234
+$ montclair ssh --job-id=1234
 > Connecting to job-1234...
 > Connected to job-1234. Type `exit` to disconnect.
 
-root@job-1234:/$ ls
+root@job-1234:/$ ls -la
 > bin  dev  home  lib  media  mnt  opt  proc  root  run  sbin  srv  sys  tmp  usr  var
 ```
     </CodeGroup>
   </Tab>
 </Tabs>
 
-<Columns cols={2}>
-  <Card icon="book-open" title="Learn more about SSH tunnels" href="/how-it-works/ssh-access"  horizontal />
-</Columns>
-
 <h2 noAnchor>
   Need help?
 </h2>
 
+
 <Columns cols={2}>
   <div>
-    <Card icon="github" title="Open an issue on GitHub" href="https://github.com/tiffindesktop/feedback/issues/new" horizontal />
+    <Card icon="headset" title="Get priority support" href="/support"  horizontal>
+        Available to support plan customers
+    </Card>
   </div>
+</Columns>
+
+<Columns cols={2}>
   <div>
-    <Card icon="discord" title="Ask on Discord" href="https://discord.gg/6VY5xRXV2" horizontal />
+    <Card icon="github" title="Open an issue on GitHub" href="https://github.com/MontclairCI/support/issues/new" horizontal>
+        Available to all users
+    </Card>
+  </div>
+</Columns>
+
+<Columns cols={2}>
+  <div>
+    <Card icon="discord" title="Ask on Discord" href="https://discord.gg/6VY5xRXV2" horizontal>
+        Available to all users
+    </Card>
   </div>
 </Columns>
