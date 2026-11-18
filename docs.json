@@ -1,7 +1,11 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "aspen",
   "name": "Montclair CI",
+  "description": "Build more, often",
+  "theme": "aspen",
+  "icons": {
+    "library": "lucide"
+  },
   "colors": {
     "primary": "#370a00",
     "dark": "#8c3f27",
@@ -14,9 +18,6 @@
     "light": "/images/logo_light.svg",
     "dark": "/images/logo_dark.svg"
   },
-  "banner": {
-    "content": "Montclair CI is free for public repositories. [Learn more about allowances](/how-it-works/allowances)"
-  },
   "background": {
     "decoration": "grid",
     "color": {
@@ -24,14 +25,21 @@
       "dark": "#000"
     }
   },
+  "styling": {
+    "eyebrows": "breadcrumbs"
+  },
+  "interaction": {
+    "drilldown": true
+  },
   "navigation": {
     "tabs": [
       {
         "tab": "Documentation",
+        "align": "start",
         "pages": [
           "index",
           {
-            "group": "TUTORIALS",
+            "group": "Tutorials",
             "icon": "book-open",
             "pages": [
               "tutorials/github",
@@ -41,7 +49,7 @@
             ]
           },
           {
-            "group": "HOW IT WORKS",
+            "group": "How it works",
             "icon": "shapes",
             "pages": [
               "how-it-works/overview",
@@ -56,10 +64,9 @@
             ]
           },
           {
-            "group": "EXAMPLES",
+            "group": "Examples",
             "icon": "box",
             "pages": [
-              "examples/hello-world",
               "examples/rules",
               "examples/jobs",
               "examples/managed-runners",
@@ -79,12 +86,14 @@
       },
       {
         "tab": "Blog",
+        "align": "start",
         "pages": [
           "blog"
         ]
       },
       {
         "tab": "Pricing",
+        "align": "start",
         "pages": [
           "pricing"
         ]
@@ -111,11 +120,11 @@
   "footer": {
     "socials": {
       "github": "https://github.com/MontclairCI/feedback/issues/new",
-      "discord": "https://discord.gg/6VY5xRXV2"
+      "discord": "https://discord.gg/TKubPvu4ZM",
+      "bluesky": "https://bsky.app/profile/montclairci.bsky.social"
     },
     "links": [
       {
-        "header": "Links",
         "items": [
           {
             "label": "Terms of Use",
@@ -124,25 +133,22 @@
           {
             "label": "Privacy Policy",
             "href": "/privacy-policy"
+          },
+          {
+            "label": "Security Disclosure",
+            "href": "/security-disclosure"
           }
         ]
       }
     ]
   },
-  "description": "FreeBSD and Linux CI runners",
-  "styling": {
-    "eyebrows": "breadcrumbs"
-  },
-  "interaction": {
-    "drilldown": true
-  },
   "errors": {
     "404": {
       "redirect": false,
-      "description": "The URL that you were looking for does not exist. Please check your URL or [go back to home](https://montclairci.com/)"
+      "description": "The URL that you were looking for does not exist. Please check your URL or [go back to home](/)"
     }
   },
-  "icons": {
-    "library": "lucide"
+  "banner": {
+    "content": "Working on open source software? Apply to the [Montclair For Maintainers program](/for-maintainers) for **free compute credits**."
   }
 }

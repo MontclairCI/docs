@@ -1,56 +1,53 @@
 ---
-sidebarTitle: "Home"
+title: "Build more, often"
+sidebarTitle: "Start here"
 icon: "house"
 mode: "wide"
 hideFooterPagination: true
 ---
 
-**Montclair CI** is a <Tooltip headline="What is continuous integration?" tip="Continuous integration (CI) is the practice of automating builds and tests on every commit." cta="Learn more" href="/how-it-works/overview">continuous integration</Tooltip> service for FreeBSD and Linux software.
+<p>
+Welcome to **Montclair CI**, a <Tooltip headline="What is continuous integration?" tip="Continuous integration (CI) is the practice of automating builds and tests on every commit." cta="Learn more" href="/how-it-works/overview">continuous integration</Tooltip> service that reduces the risk of delivery delays, reduces the effort of integration, and enables practices that foster a healthy codebase for rapid enhancement with new features.
+</p>
 
-<Steps>
-  <Step title="1. Push changes" icon="git-pull-request-arrow">
-    Trigger <Tooltip headline="What is a pipeline?" tip="TODO" cta="Learn more" href="/how-it-works/pipelines">pipelines</Tooltip> whenever new commits are pushed to your repository.
-  </Step>
-  <Step title="2. Build and test" icon="check">
-    Run on a wide range of FreeBSD and Linux <Tooltip headline="What is a Docker image?" tip="A Docker image (or container image) is a standard format for packaging FreeBSD and Linux userspace software." cta="Learn more" href="/how-it-works/images">Docker images</Tooltip>.
-  </Step>
-  <Step title="3. Debug with SSH" icon="terminal">
-    Connect to your CI execution environment with <Tooltip headline="How does SSH work?" tip="TODO" cta="Learn more" href="/how-it-works/ssh-access">SSH</Tooltip> to troubleshoot failures.
-  </Step>
-</Steps>
+<h3 noAnchor>Try it for free</h3>
 
-<Columns cols={2}>
-  <Card icon="github" title="5-minute GitHub Tutorial" href="https://github.com/marketplace/montclair-ci" arrow={false} horizontal />
+Get started in less than 5 minutes with a tutorial
+
+<Columns cols={4}>
+    <Card icon="/images/github.svg" title="GitHub" href="/tutorials/github" horizontal arrow/>
+    <Card icon="/images/gitlab.svg" title="GitLab" href="/tutorials/gitlab" horizontal arrow/>
+    <Card icon="/images/gitea.svg" title="Gitea" href="/tutorials/gitea" horizontal arrow/>
+    <Card icon="/images/forgejo.svg" title="Forgejo" href="/tutorials/forgejo" horizontal arrow/>
 </Columns>
 
-Not using GitHub? We also have 5-minute tutorials for <a href="/tutorials/gitlab">GitLab</a>, <a href="/tutorials/gitea">Gitea</a>, and <a href="/tutorials/forgejo">Forgejo</a>.
+---
 
 <h1 noAnchor>
-  Run CI for FreeBSD and Linux
+  Run FreeBSD <Icon src="/images/freebsd.svg" size={24} className="my-0" /> and Linux <Icon src="/images/linux.svg" size={24} className="my-0" />
 </h1>
 
-Montclair CI supports custom <Tooltip headline="What is a Docker image?" tip="A Docker image (or container image) is a standard format for packaging FreeBSD and Linux userspace software." cta="Learn more" href="/how-it-works/images">Docker images</Tooltip> for FreeBSD and Linux.
+The <Tooltip headline="What is a Montclair Runner?" tip="TODO" cta="Learn more" href="/how-it-works/managed-runners">Montclair Runner</Tooltip> is an <Tooltip headline="Which open-source license is used?" tip="TODO" cta="See on GitHub" href="https://github.com/montclairci/montclair-runner">open-source</Tooltip> daemon that runs custom <Tooltip headline="What is a Docker image?" tip="A Docker image (or container image) is a standard format for packaging FreeBSD and Linux userspace software." cta="Learn more" href="/how-it-works/images">Docker images</Tooltip> for FreeBSD and Linux.
 
 <Columns cols={2}>
-  <div>
-    **Architectures**
-    - `amd64`
-    - `arm64`
-  </div>
-  <div>
-    **Operating system kernels**
-    - `FreeBSD 12+`
-    - `Linux 4+`
-  </div>
+  <Card icon="" title="Managed runners" href="/how-it-works/managed-runners" horizontal arrow>
+      Elastically scale up or down with no operational overhead.
+  </Card>
+
+  <Card icon="" title="Self-hosted runners" href="/how-it-works/managed-runners" horizontal arrow>
+      Secure your most important workloads by keeping the Montclair Runner on your own infrastructure.
+  </Card>
 </Columns>
 
-Windows and macOS runners are not supported.
+Windows and macOS runners are currently not supported.
+
+---
 
 <h1 noAnchor>
   Readability counts
 </h1>
 
-Montclair CI uses a <Tooltip headline="What configuration language is used?" tip="TODO" cta="Learn more" href="/">Python-like language</Tooltip> for defining CI pipelines. The pipeline language is
+Montclair CI uses a <Tooltip headline="What configuration language does Montclair CI use?" tip="Montclair CI uses a custom Starlark language implementation. TODO" cta="Learn more" href="/">Python-like language</Tooltip> for defining CI pipelines. The pipeline language is
 
 - **Expressive**, with native support for loops and conditionals
 - **Maintainable**, with reusable functions, variables, and module imports
@@ -60,8 +57,8 @@ Montclair CI uses a <Tooltip headline="What configuration language is used?" tip
   <Tab title="Matrix strategy">
     <CodeGroup>
 ```python pipeline.py
-images = ["freebsd:14.4-RELEASE", "freebsd:15.1-RELEASE"]
-arches = ["amd64", "arm64", "i686", "armv7"]
+images = ["freebsd:15.1-RELEASE", "debian:13", "rocky:9]
+arches = ["amd64", "arm64"]
 
 for image in images:
   for arch in arches:
@@ -113,11 +110,13 @@ def clang_job(name: str, srcs: list[str]):
 
 </Tabs>
 
+---
+
 <h1 noAnchor>
   Stable prod begins with ergonomic dev
 </h1>
 
-The Montclair CLI (`montclair`) provides a toolbox for visualizing, validating, and debugging your CI pipelines.
+The Montclair CLI provides a toolbox for visualizing, validating, and debugging your pipelines.
 
 <Tabs>
   <Tab title="Pipeline visualization">
@@ -152,31 +151,18 @@ root@job-1234:/$ ls -la
   </Tab>
 </Tabs>
 
-<h2 noAnchor>
-  Need help?
-</h2>
+---
 
+<h1 noAnchor>
+  Need help?
+</h1>
 
 <Columns cols={2}>
   <div>
-    <Card icon="headset" title="Get priority support" href="/support"  horizontal>
+    <Card icon="headset" title="Get priority support" href="/support"  horizontal arrow>
         Available to support plan customers
     </Card>
   </div>
 </Columns>
 
-<Columns cols={2}>
-  <div>
-    <Card icon="github" title="Open an issue on GitHub" href="https://github.com/MontclairCI/support/issues/new" horizontal>
-        Available to all users
-    </Card>
-  </div>
-</Columns>
-
-<Columns cols={2}>
-  <div>
-    <Card icon="discord" title="Ask on Discord" href="https://discord.gg/6VY5xRXV2" horizontal>
-        Available to all users
-    </Card>
-  </div>
-</Columns>
+If you are not a support plan customer, you may still request help by [opening an issue on GitHub](https://github.com/MontclairCI/support/issues/new) or [asking on our Discord server](https://discord.gg/TKubPvu4ZM).
